@@ -20,6 +20,13 @@ function joysTracker(event) {
     joysAnim(event);
 }
 
+function joysTrackerPhone(event) {
+    var touch = event.touches[0];
+    globalMousePos = { x: touch.clientX, y: touch.clientY };
+    mousePosText.textContent = `(${globalMousePos.x}, ${globalMousePos.y})`;
+    joysAnim(event);
+}
+
 let radiusCont = parseInt(getComputedStyle(controller).width)/2;
 let radiusJoys = getComputedStyle(joystick).width;
 radiusJoys = parseInt(radiusJoys) / 2;
@@ -81,7 +88,7 @@ function joysAnim() {
 function joysDown() {
     console.log('down');
     window.addEventListener('mousemove', joysTracker);
-    window.addEventListener('touchmove', joysTracker);
+    window.addEventListener('touchmove', joysTrackerPhone);
 }
 
 function joysUp() {
