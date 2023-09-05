@@ -1,0 +1,44 @@
+body {
+    background-color: black;
+}
+
+#mouse-pos {
+    color: aliceblue;
+}
+
+#track-pad{
+    height: 100px;
+    width: 100px;
+    background-color: transparent;
+    border-radius: 0%;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    margin: 100px;
+    /* padding: 5px; */
+}
+
+#joystick{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(128, 128, 128);
+    border-radius: 100%;
+    margin: 100px;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+#controller{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(81, 81, 81);
+    border-radius: 100%;
+    position: fixed;
+    /* margin: 0; */
+    left: 0px;
+    top: 0px;
+}
