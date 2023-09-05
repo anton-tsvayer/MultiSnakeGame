@@ -7,8 +7,11 @@ const mousePosText = document.getElementById('mouse-pos');
 let globalMousePos = { x: undefined, y: undefined };
 
 trackPad.addEventListener('mousedown', joysDown);
+trackPad.addEventListener('touchstart', joysDown);
 trackPad.addEventListener('mouseup', joysUp);
+trackPad.addEventListener('touchend', joysUp);
 window.addEventListener('mouseup', joysUp);
+window.addEventListener('touchend', joysUp);
 
 
 function joysTracker(event) {
@@ -78,11 +81,13 @@ function joysAnim() {
 function joysDown() {
     console.log('down');
     window.addEventListener('mousemove', joysTracker);
+    window.addEventListener('touchmove', joysTracker);
 }
 
 function joysUp() {
     console.log('up');
     window.removeEventListener('mousemove', joysTracker);
+    window.removeEventListener('touchmove', joysTracker);
     // localMousePos = { x: undefined, y: undefined };
     controller.style.left = joysX - radiusCont + 'px';
     controller.style.top = joysY - radiusCont + 'px';
